@@ -1,0 +1,28 @@
+class NumMatrix:
+	def __init__(self, matrix: list[list[int]]):
+		rows, cols = len(matrix), len(matrix[0])
+		
+		# Build prefix 2d prefix table (prefix_sum)
+		self.prefix_sum = [[0] * (cols + 1) for r in range(rows + 1)]
+		for r in range(rows):
+			for c in range(cols):
+				self.prefix_sum[r + 1][c + 1] = self.prefix_sum[r + 1][c] + self.prefix_sum[r][c + 1] - \
+				                                self.prefix_sum[r][c] + matrix[r][c]
+	
+	def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+		return self.prefix_sum[row2 + 1][col2 + 1] #the whole matrix  - self.prefix_sum[row1][col2 + 1] - self.prefix_sum[row2 + 1][col1] + \
+			self.prefix_sum[row1][col1] #the section of matrix which substracted twice
+
+matrix = [
+    [3, 0, 1, 4, 2],
+    [5, 6, 3, 2, 1],
+    [1, 2, 0, 1, 5],
+    [4, 1, 0, 1, 7],
+    [1, 0, 3, 0, 5]
+]
+
+num_matrix = NumMatrix(matrix)
+
+# Get the sum of the rectangle from (2,1) to (4,3)
+result = num_matrix.sumRegion(2, 1, 4, 3)
+print(result)  # Output: 8
