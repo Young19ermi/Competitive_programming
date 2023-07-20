@@ -1,0 +1,34 @@
+def binarysearch(array,target):
+	low=0
+	high=len(array)-1
+	for i in range(len(array)):
+		mid=(high+low)//2
+		if array[mid]==target:
+			return mid
+		elif array[mid]<target:
+			low=mid+1
+		elif array[mid]>target:
+			high=mid-1
+		else:
+	         return -1
+array=[1,3,5,7,9,10]
+target=int(input("Enter your number: "))
+print(binarysearch(array,target))
+
+
+def binarysearch(array, target):
+	low = 0
+	high = len(array) - 1
+	while low < high:
+		mid = (high + low) // 2
+		if target == array[mid]:
+			return mid
+		elif target < array[mid]:
+			high = mid - 1
+		else:
+			low = mid + 1
+	
+	return -1
+	array = [0, 3, 5, 6, 8]
+	target = int(input("enter the numbers"))
+	print(binarysearch(array))
