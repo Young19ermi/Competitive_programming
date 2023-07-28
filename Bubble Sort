@@ -1,0 +1,14 @@
+def bubbleSort(arr):
+	n = len(arr)
+	for i in range(n):
+		for j in range(0, n - i - 1):#why do we use n-1-i is n-1 for 0(if it was 1 then use might use n)
+			#but in this case n-i because of the minimum number goes to the minimum index so the left is n-i
+			if arr[j] > arr[j + 1]:
+				arr[j], arr[j + 1] = arr[j + 1], arr[j]
+		return arr
+
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubbleSort(arr)
+print("Sorted array is:")
+print(bubbleSort(arr))
+
