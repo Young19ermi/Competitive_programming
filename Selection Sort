@@ -1,0 +1,10 @@
+def selection_sort(array):
+	for i in range(len(array)):
+		min_index = i #minimum index assignation
+		for j in range(i+1, len(array)):
+			if array[min_index] > array[j]: #if we use < it will reverse it
+				min_index = j #indentation error if you make double space on the next line of code
+		array[i], array[min_index] = array[min_index], array[i]
+	return array
+array=[1,3,2,8,4,0]
+print(selection_sort(array))
