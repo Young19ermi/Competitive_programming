@@ -1,0 +1,21 @@
+def insertionsort(arr):
+	n=range(len(arr))
+	for i in range(len(arr)):
+		key=arr[i]
+		j=i-1 #because j is one lower than i since we shift one elemnet from i to j
+		while j >= 0 and arr[j] > key:
+			arr[j + 1] = arr[j]
+			j -= 1
+		"""The reason we use 'j+1' instead of 'j' is
+		 because we shift 'j' to 'i' for comparison with the key.
+		 Once the element is shifted, it is referred to as 'i',
+		  and 'i+1' represents the next element. On the other side,
+		  'j' is used to represent the previous element and 'j+1'
+		   represents the current element. So, when 'j' is shifted to 'i',
+		    it is essentially cancelled out, and the variable
+		     'j+1' becomes necessary to refer to the relevant element.
+		This is why we use 'j+1' instead of just 'j'."""
+		arr[j+1] = key
+	return arr
+array=[1,0,4,6,8,3,5,7,9]
+print(insertionsort(array))
