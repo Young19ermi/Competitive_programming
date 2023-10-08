@@ -1,0 +1,6 @@
+if __name__ == '__main__':
+    n = int(input())
+    empty=""
+    for i in range(1, n+1):
+        empty+=str(i)
+    print(empty) #Shifting this code one tab to the right would negatively impact the output.
