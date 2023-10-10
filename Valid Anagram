@@ -1,0 +1,20 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        dict_sol={}
+        for letter in s:
+            if letter not in dict_sol:
+                dict_sol[letter]=1
+            else:    
+                dict_sol[letter]+=1
+        for letter in t:
+            if letter not in dict_sol:
+                return False
+            else:    
+                dict_sol[letter]-=1
+        for value in dict_sol.values():
+            if value != 0:
+                return False
+        return True     
+
+
+        
