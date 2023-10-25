@@ -1,0 +1,9 @@
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        sq=int(sqrt(c)) #because the highest value to a and b is square roor of c .(matimatical logic) eg:2^2+2^2=8 sqrt(8) = 2..46
+        for a in range(sq+1):#to calculate by inserting zero we need to add one to the range of sq.
+            b = sqrt(c -(a*a))
+            if b ==int(b): return True
+        return False
+#a^2 + b^2 = c
+        
