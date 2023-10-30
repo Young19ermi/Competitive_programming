@@ -1,0 +1,22 @@
+class Solution:
+    def pancakeSort(self, array: List[int]) -> List[int]:
+        def flip(array, k): # define the function that flip the given array to the k
+            i, j = 0, k
+            while i < j:
+                array[i], array[j] = array[j], array[i]
+                i += 1
+                j -= 1
+        flips = []
+        n = len(array)
+        for i in range(n-1, 0 ,-1):
+            max_index = array.index(max(array[:i+1]))
+            if max_index != i:
+                flip(array, max_index)                    
+                flip(array, i)
+                flips.append(max_index + 1)
+                flips.append(i + 1)
+        return flips        
+
+
+
+       
