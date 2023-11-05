@@ -1,0 +1,23 @@
+class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -> int:
+        subarraycount = defaultdict(int)
+        total = 0
+        for num in nums:
+            count = 0
+            total += num
+            remainder = total % k
+            subarraycount[remainder] += 1
+
+        for key,value in subarraycount.items(): # [key:value --> 0:2 --> [key -remaninder] & [value-occurence]]
+            if key == 0:
+                count += value
+                
+            if value > 1:
+                count += (value * (value - 1)) // 2 #the combination formula
+        return count            
+
+
+
+
+
+
