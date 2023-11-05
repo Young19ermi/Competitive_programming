@@ -1,0 +1,12 @@
+class Solution:
+    def subarraysum(self, nums:List[int],k:int) -> int:
+        prefixsum = defaultdict(int)
+        total = 0
+        res = 0
+        prefixsum[0] = 1 #initialize the valut of 0:1
+        for nums in nums:
+            total += nums
+            res += prefixsum[total - k] # will check the total - k in dict if exists it will increment or the value  of  preixsum[total - k] if it is 1 it will add it to res.
+            prefixsum[total] += 1 # add the value of total to the dict
+        return res
+            
