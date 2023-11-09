@@ -12,7 +12,7 @@ class Solution:
             if key == 0: #[0:2] if the modulus is zero it means it is divisible we just add it to the count
                 count += value
                 
-            if value > 1: #The second if statement should be used whenever the value in the subarray_count dictionary is greater than 1, regardless of the key value.
+            if value > 1: #The second if statement should be used whenever the value in the subarray_count dictionary is greater than 1, regardless of the key value more specifically When the value associated with a key is greater than 1 (indicating multiple occurrences of the same remainder)
                 count += (value * (value - 1)) // 2 #the combination formula
         return count            
 
