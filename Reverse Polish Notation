@@ -1,0 +1,29 @@
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+        # Pushing it into the stack if the element is operand then once we find out the operator we use it and pop the previous elements and ended up with result in the stack and continues until the tokens ended up.
+        operator ={'+','-','*','/'}
+        for c in tokens:
+            if c not in operator:
+                stack.append(int(c))
+            else:
+                a = stack.pop()
+                b = stack.pop()    
+                if c == '-':
+                    stack.append(b - a)   
+                elif c == '+':
+                    stack.append(b + a)
+                elif c == '*':
+                    stack.append(b * a)
+                else:
+                    stack.append(int(b / a))
+        return stack.pop()
+        """
+        for c in tokens:
+            if c not in "+-*/":
+                stack.append(int(c))
+            else:
+                a = stack.pop()
+                b = stack.pop()
+                if c == '+':     
+        """
