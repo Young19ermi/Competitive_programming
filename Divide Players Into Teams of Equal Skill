@@ -1,0 +1,13 @@
+class Solution:
+    def dividePlayers(self, skill: List[int]) -> int:
+        desired_sum = (2 *sum(skill)) // len(skill) 
+        countme = Counter(skill)
+        res = 0
+        for val, value in countme.items():
+            diff = desired_sum - val
+            if value != countme[diff]: return -1
+            res += value * diff * val
+        return res // 2
+
+
+        
