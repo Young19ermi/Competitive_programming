@@ -1,4 +1,4 @@
-class Solution:
+hvvclass Solution:
     def minimumCost(self, cost: List[int]) -> int:
         nums = list(reversed(sorted(cost)))
         s,c = 0,0
