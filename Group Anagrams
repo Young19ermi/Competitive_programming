@@ -1,0 +1,11 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        s = defaultdict(list)
+        res = []
+        for n in strs:
+            k = str(sorted(n))
+            s[k].append(n)
+        for key,items in s.items():
+            res.append(list(items))
+
+        return res
