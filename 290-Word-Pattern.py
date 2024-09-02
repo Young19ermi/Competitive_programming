@@ -1,3 +1,4 @@
+#this is the solution
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         check = defaultdict(list)
