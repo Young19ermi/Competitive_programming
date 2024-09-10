@@ -7,6 +7,7 @@ class Solution:
             if height[left]<height[right]:
                 left+=1
             else:
+#solution
                 right-=1
         return area    
 # solution finished
