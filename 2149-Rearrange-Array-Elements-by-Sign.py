@@ -1,3 +1,4 @@
+#solution
 class Solution(object):
     def rearrangeArray(self, nums):
         """
