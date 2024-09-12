@@ -1,0 +1,16 @@
+from collections import defaultdict
+
+class Solution:
+    def similarPairs(self, words: list[str]) -> int:
+        check = defaultdict(int)
+        for n in words:
+            k = sorted(set(n))
+            new = ''.join(k)
+            check[new] += 1
+        
+        res = 0
+        for count in check.values():
+            if count > 1:
+                res += count * (count - 1) // 2
+        
+        return res
