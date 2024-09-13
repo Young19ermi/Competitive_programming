@@ -1,0 +1,16 @@
+class Solution:
+    def xorQueries(self, arr: List[int], queries: List[List[int]]) -> List[int]:
+        prefix_xor = [arr[0]]
+        init = arr[0]
+        res = []
+        for i in range(1,len(arr)):
+            prefix_xor.append(init^arr[i])
+            init ^= arr[i]
+        for x,y in queries:
+            if x == 0:
+                res.append(prefix_xor[y])
+            elif x == y:
+                res.append(arr[y])
+            else:
+                res.append(prefix_xor[y]^prefix_xor[x-1])
+        return res
