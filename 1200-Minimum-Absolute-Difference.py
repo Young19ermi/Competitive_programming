@@ -1,7 +1,7 @@
 class Solution:
     def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
         arr = sorted(arr)
-#optimized solution
+#optimized solutions
         minimums = []
         res = float('inf')  
         
