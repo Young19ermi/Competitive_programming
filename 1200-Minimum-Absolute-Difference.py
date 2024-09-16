@@ -4,6 +4,7 @@ class Solution:
 #optimized solutions
         minimums = []
         res = float('inf')  
+        #solition
         
         for i in range(len(arr) - 1):
             diff = abs(arr[i] - arr[i + 1])
