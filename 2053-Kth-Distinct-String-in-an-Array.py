@@ -1,5 +1,6 @@
 class Solution:
     def kthDistinct(self, arr: List[str], k: int) -> str:
+        print (arr)
         nums = []
 
         #this is the solution
