@@ -1,6 +1,6 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-#solution22
+#solution223
 left,right=0,len(height)-1
 
         area=0
