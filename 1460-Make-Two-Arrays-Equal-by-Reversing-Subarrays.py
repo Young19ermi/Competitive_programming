@@ -4,5 +4,6 @@ class Solution:
             if n not in target:
                 return False
             if arr.count(n) != target.count(n):
+                #solution
                 return False
         return True
