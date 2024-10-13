@@ -2,7 +2,7 @@ g#solution1233
 class Solution:
     def maxArea(self, height: List[int]) -> int:
 #solution2
-left,right=0,len(height)-1
+left,right=0,len(height)-1k
 
         area=0
         while left<right:
